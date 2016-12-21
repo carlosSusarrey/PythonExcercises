@@ -3,22 +3,22 @@ import NodeClass
 
 
 def return_kth_to_last(head : NodeClass.ListNode, k) -> NodeClass.ListNode:
-    n = head
-    aux = n
+    work_node = head
+    auxiliary_fast_node = work_node
 
     for i in range(0, k):
-        print("node value:", str(aux.value))
-        if aux is not None:
-            aux = aux.next
+        print("node value:", str(auxiliary_fast_node.value))
+        if auxiliary_fast_node is not None:
+            auxiliary_fast_node = auxiliary_fast_node.next
         else:
             print("not enough elements")
             return None
 
-    while aux is not None:
-        n = n.next
-        aux = aux.next
+    while auxiliary_fast_node is not None:
+        work_node = work_node.next
+        auxiliary_fast_node = auxiliary_fast_node.next
 
-    return n
+    return work_node
 
 list_head = NodeClass.ListNode(1)
 list_head.next = NodeClass.ListNode(2)

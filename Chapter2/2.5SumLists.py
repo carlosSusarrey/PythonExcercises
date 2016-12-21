@@ -18,7 +18,7 @@ def sum_list_forward(head1: NodeClass.ListNode, head2: NodeClass.ListNode):
     return sum_head
 
 
-def sum_list_forward_recursive(node1: NodeClass.ListNode, node2: NodeClass.ListNode)-> NodeClass.ListNode:
+def sum_list_forward_recursive(node1: NodeClass.ListNode, node2: NodeClass.ListNode) -> NodeClass.ListNode:
     if node1.next is None:
         new_node = NodeClass.ListNode(node1.value + node2.value)
         return new_node
@@ -46,9 +46,6 @@ def insert_before(head: NodeClass.ListNode, val):
     return temp
 
 
-
-
-
 def sum_list_back(head1: NodeClass.ListNode, head2: NodeClass.ListNode):
     carry = 0
     sum_node = None
@@ -60,7 +57,8 @@ def sum_list_back(head1: NodeClass.ListNode, head2: NodeClass.ListNode):
             head2 = NodeClass.ListNode(0)
 
         sum = head1.value + head2.value + carry
-        if sum > 9:
+        decimal_max_unit = 9
+        if sum > decimal_max_unit:
             carry = 1
         else:
             carry = 0
@@ -75,6 +73,7 @@ def sum_list_back(head1: NodeClass.ListNode, head2: NodeClass.ListNode):
         head1 = head1.next
         head2 = head2.next
     return sum_head
+
 
 list_head = NodeClass.ListNode(3)
 list_head.next = NodeClass.ListNode(9)
@@ -91,7 +90,7 @@ while n is not None:
 
 # 6->1->1
 # 5->2->3
-#116 = 325 = 441
+# 116 = 325 = 441
 #
 # 611 + 523 = 1134
 

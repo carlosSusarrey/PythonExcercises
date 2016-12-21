@@ -20,20 +20,20 @@ def one_way(input_string1, input_string2):
         short_string = input_string1
 
     differences = 0
-    long_i = 0
+    longer_string_iterator = 0
 
     for i in range(0, len(short_string)):
-        if short_string[i] != long_string[long_i]:
+        if short_string[i] != long_string[longer_string_iterator]:
             differences += 1
 
             if differences > 1:
                 return False
 
             if size_difference != 0:
-                long_i += 1
-                if short_string[i] != long_string[long_i]:
+                longer_string_iterator += 1
+                if short_string[i] != long_string[longer_string_iterator]:
                     return False
-        long_i += 1
+        longer_string_iterator += 1
     return True
 
 print(one_way("pale","ple"))

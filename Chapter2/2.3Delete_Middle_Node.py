@@ -4,7 +4,7 @@ import NodeClass
 
 def delete_middle_node(node: NodeClass.ListNode):
     if node.next is None or node is None:
-        print("Cant remove")
+        print("Can't remove last node")
         return False
 
     node.value = node.next.value

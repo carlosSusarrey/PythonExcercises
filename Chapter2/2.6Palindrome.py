@@ -4,28 +4,28 @@ import math
 
 
 def is_palindrome(head: NodeClass.ListNode):
-    size = NodeClass.get_list_size(head)
-    steps = math.ceil(size/2)
+    list_size = NodeClass.get_list_size(head)
+    steps = math.ceil(list_size/2)
 
-    if (size % 2) == 0:
-        even = True
+    if (list_size % 2) == 0:
+        list_has_even_size = True
     else:
-        even = False
+        list_has_even_size = False
 
-    helper = head
-    stack = []
+    work_node = head
+    stored_values_stack = []
 
     for i in range(0, steps):
-        stack.append(helper.value)
-        helper = helper.next
+        stored_values_stack.append(work_node.value)
+        work_node = work_node.next
 
-    if not even:
-        stack.pop()
+    if not list_has_even_size:
+        stored_values_stack.pop()
 
-    while helper is not None:
-        if stack.pop() != helper.value:
+    while work_node is not None:
+        if stored_values_stack.pop() != work_node.value:
             return False
-        helper = helper.next
+        work_node = work_node.next
     return True
 
 
