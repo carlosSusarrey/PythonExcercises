@@ -21,14 +21,15 @@ def partition_list(head: NodeClass.ListNode, value):
 
     return left_begin
 
-def partition_list_inorder(head: NodeClass.ListNode, value):
+
+def partition_list_in_order(head: NodeClass.ListNode, value):
     left_begin = None
     left_end = None
     right_begin = None
     right_end = None
 
     while head is not None:
-        temp = head.next
+        temporarily_saved_node = head.next
         head.next = None
         if head.value < value:
             if left_begin is None:
@@ -44,7 +45,7 @@ def partition_list_inorder(head: NodeClass.ListNode, value):
             else:
                 right_end.next = head
                 right_end = right_end.next
-        head = temp
+        head = temporarily_saved_node
 
     if left_begin is None:
         return right_begin
@@ -70,4 +71,3 @@ while n is not None:
 #
 #
 #
-

@@ -3,24 +3,24 @@ import collections
 
 
 def check_if_strings_are_permutations(input_string1: collections.Iterable, input_string2: collections.Iterable):
-    dictionary = {}
+    alphabet = {}
 
-    for letter in input_string1:
-        dictionary[letter] = 0
+    for character in input_string1:
+        alphabet[character] = 0
 
-    for letter in input_string2:
-        dictionary[letter] = 0
+    for character in input_string2:
+        alphabet[character] = 0
 
-    for letter in input_string1:
-        if letter != ' ':
-            dictionary[letter] = 1
+    for character in input_string1:
+        if character != ' ':
+            alphabet[character] = 1
 
-    for letter in input_string2:
-        if letter != ' ':
-            dictionary[letter] = dictionary[letter]-1
+    for character in input_string2:
+        if character != ' ':
+            alphabet[character] = alphabet[character]-1
 
-    for letter in dictionary:
-        if dictionary[letter] != 0:
+    for character in alphabet:
+        if alphabet[character] != 0:
             return False
 
     return True

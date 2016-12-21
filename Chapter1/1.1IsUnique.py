@@ -4,15 +4,15 @@ import collections
 
 def has_all_unique_characters(input_string: collections.Iterable) -> object:
 
-    my_array = {}
+    alphabet = {}
 
-    for letter in input_string:
-        my_array[letter] = 0
+    for character in input_string:
+        alphabet[character] = 0
 
-    for letter in input_string:
-        if my_array[letter] > 0:
+    for character in input_string:
+        if alphabet[character] > 0:
             return False
-        my_array[letter] = 1
+        alphabet[character] = 1
 
     return True
 

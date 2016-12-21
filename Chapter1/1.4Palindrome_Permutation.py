@@ -3,19 +3,19 @@ import collections
 
 
 def is_palindrome_of_permutation(input_string: collections.Iterable):
-    hash_table = {}
+    alphabet = {}
 
-    for letter in input_string:
-        if letter != ' ':
-            hash_table[letter] = 0
+    for character in input_string:
+        if character != ' ':
+            alphabet[character] = 0
 
-    for letter in input_string:
-        if letter != ' ':
-            hash_table[letter] += 1
+    for character in input_string:
+        if character != ' ':
+            alphabet[character] += 1
 
     odd_count = 0
-    for integer in hash_table:
-        if hash_table[integer] % 2 != 0:
+    for character in alphabet:
+        if alphabet[character] % 2 != 0:
             if odd_count > 0:
                 return False
             odd_count += 1

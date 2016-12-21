@@ -10,17 +10,17 @@ def remove_dups(head: NodeClass.ListNode):
     if head is None:
         return None
 
-    n = head
+    work_node = head
 
-    while n is not None:
-        aux = n
-        while aux.next is not None:
-            if aux.next.value == n.value:
-                aux.next = aux.next.next
+    while work_node is not None:
+        auxiliary_node = work_node
+        while auxiliary_node.next is not None:
+            if auxiliary_node.next.value == work_node.value:
+                auxiliary_node.next = auxiliary_node.next.next
             else:
-                aux = aux.next
+                auxiliary_node = auxiliary_node.next
 
-        n = n.next
+        work_node = work_node.next
 
 list_head = NodeClass.ListNode(1)
 list_head.next = NodeClass.ListNode(1)
